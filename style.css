@@ -1,0 +1,224 @@
+@import url("reset.css");
+
+:root{
+    --gradient: linear-gradient(hsl(249, 99%, 64%),hsl(278, 94%, 30%));
+    --error-clr-red:hsl(0, 100%, 66%);
+    --white-clr: hsl(0, 0%, 100%);
+    --l-violet-clr: hsl(270, 3%, 87%);
+    --d-violet-clr: hsl(279, 6%, 55%);
+    --vd-violet-clr: hsl(278, 68%, 11%);
+
+    --fw-l: 400;
+    --fw-m: 500;
+
+    --ff: 'Space Grotesk', sans-serif;
+
+    font-size: 62.5%;
+
+}
+
+body{
+    font-size: 1.8rem;
+    font-family: var(--ff);
+    font-weight: var(--fw-l);
+}
+
+label{
+    display: block;
+    text-transform: uppercase;
+}
+
+
+/*GRID LAYOUT*/
+.grid__container{
+    display: grid;
+    min-height: 100vh; 
+    
+}
+
+
+/*CARDS SECTION*/
+
+.cards{
+    --spacing: 2em;
+    min-height: 25vh;
+    background: url("images/bg-main-mobile.png")no-repeat center center;
+    background-size: cover;
+    color: var(--white-clr);
+    text-transform: uppercase;
+    
+}
+
+.front__card, .back__card{
+    position: relative;
+}
+
+.front__card{
+    max-width: min-content;
+    z-index: 2;
+    margin:0 auto;
+    top:60%;
+    right:2%;
+}
+
+.back__card{
+    max-width: min-content;
+    margin:0 auto;
+    bottom:20%;
+    left:2%;
+}
+
+.front__bg , .back__bg{
+    max-width: 30rem;
+}
+
+.front__card > *:not(.front__bg), .back__card > *:not(.back__bg){
+    position: absolute;
+}
+.logo{
+    top: calc(var(--spacing)/2);
+    left:var(--spacing);
+}
+.display__card__number{
+    font-size: 1.8rem;
+    letter-spacing:0.3rem;
+    top:55%;
+    left:var(--spacing);
+}
+.cardholder{
+    bottom:calc(var(--spacing)/2);
+    left:var(--spacing);
+    font-weight: var(--fw-l);
+    font-size: 1.5rem;
+}
+.expire__date{
+    right:var(--spacing);
+    bottom:calc(var(--spacing)/2);
+}
+.card__cvc{
+    right:10%;
+    bottom:45%;
+}
+
+/*FORM SECTION*/
+
+.form{
+    --spacing: 2rem;
+    max-width: 50rem;
+    padding: var(--spacing);
+    margin: 6rem auto;
+}
+.form__container{
+    display: grid;
+    gap:var(--spacing);
+}
+
+input{
+    width:100%;
+    padding: 0.6em;
+    max-height: min-content;
+    border:.1px solid var(--l-violet-clr);
+    border-radius: 1rem;
+}
+.grid-group{
+    display: grid;
+    gap:0.5rem;
+    
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1rem;
+}
+.grid-group-date{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.grid-group-date label{
+    grid-column: span 2;
+}
+
+.submit__btn{
+    background: var(--gradient);
+    color:var(--white-clr);
+    border:none;
+}
+
+@media (min-width: 1000px){
+    .grid__container{
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+    }
+    .cards{
+        
+        background: url("images/bg-main-desktop.png")no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        min-height: 100vh;
+       
+    }
+    .front__card{
+        top:25vh;
+        left:6vw;
+    }
+    .back__card{
+        top:30vh;
+        left:9.5vw;
+    }
+    .front__bg , .back__bg{
+        max-width: 40rem;
+    }
+    .display__card__number{
+        font-size: 2.2rem;
+        letter-spacing:0.3rem;
+        top:55%;
+        left:var(--spacing);
+    }
+    .cardholder{
+        font-size:1.8rem;
+    }
+}
+@media (min-width: 1200px){
+    .grid__container{
+        grid-template-columns: 1fr 2fr;
+        
+    }
+    
+    .front__bg , .back__bg{
+        max-width: 50rem;
+    }
+    .front__card{
+        top:25vh;
+        left:12vw;
+    }
+    .back__card{
+        top:30vh;
+        left:15vw;
+    }
+    .display__card__number{
+        font-size: 2.5rem;
+        letter-spacing:0.3rem;
+        top:55%;
+        left:var(--spacing);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*NON VISIBILE CLASS*/
+.inactive{
+    display: none;
+}
+
